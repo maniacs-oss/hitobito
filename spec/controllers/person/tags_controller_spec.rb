@@ -18,6 +18,7 @@ describe Person::TagsController do
     let(:group) { groups(:top_layer) }
     let(:top_leader) { people(:top_leader) }
     let(:bottom_member) { people(:bottom_member) }
+    let!(:tag1) { Fabricate(:tag, name: 'morelim') }
 
     before do
       bottom_member.tag_list.add('loremipsum')
@@ -43,7 +44,7 @@ describe Person::TagsController do
 
     it 'returns matching and unassigned tags if :q param at least 3 chars long' do
       get :query, params: { group_id: group.id, person_id: bottom_member.id, q: 'ore' }
-      expect(JSON.parse(response.body)).to eq([{'label' => 'lorem'}, {'label' => 'loremipsum'}])
+      expect(JSON.parse(response.body)).to eq([{'label' => 'lorem'}, {'label' => 'loremipsum'}, {'label' => 'morelim'}])
     end
 
     it 'does not return category_validation tags' do

@@ -68,8 +68,7 @@ class Person::TagsController < ApplicationController
   end
 
   def available_tags(query)
-    Person
-      .tags_on(:tags)
+    Tag
       .where('name LIKE ?', "%#{query}%")
       .where.not(name: excluded_tags)
       .order(:name)

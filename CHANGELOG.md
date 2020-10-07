@@ -3,6 +3,7 @@
 ## unreleased
 
 *  Datenbank kann nun Emoji (also: alles aus Unicode) speichern
+*  Tag Verwaltung unter Einstellungen
 
 ## Version 1.22
 
@@ -15,6 +16,7 @@
 *  Berechtigungen werden im OAuth-Profil mitgeliefert
 *  Eigene OAuth-Autorisierungen können entfernt werden
 *  Generelle Validierung von E-Mail Adressen
+*  Personen filtern die einen spezifischen Tag nicht besitzen
 
 ## Version 1.21
 
